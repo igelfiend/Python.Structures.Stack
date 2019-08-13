@@ -38,16 +38,14 @@ class Stack:
 def check_brackets_in_string(check_str):
     # Creating stack for provide string validation
     stack = Stack()
-    is_valid = True
     for element in check_str:
         if element == "(":
             stack.push(1)
         elif element == ")" and stack.size() > 0:
             stack.pop()
         else:
-            is_valid = False
-            break
+            return False
 
-    return is_valid and stack.size() == 0
+    return stack.size() == 0
 
 
